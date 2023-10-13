@@ -79,21 +79,14 @@ namespace Halmazok
             List<int> unio = new List<int>(A_halmaz);
             unio.AddRange(B_halmaz);
 
-            unio.Distinct().ToList();
+            unio = unio.Distinct().ToList();
             unio.Sort();
 
-            foreach (var item in A_halmaz)
+            foreach (var item in unio)
             {
                A_unio_B_list.Items.Add(item);
             }
-            foreach (var item in B_halmaz)
-            {
-                if (!B_halmaz.Contains(item))
-                {
-                    A_unio_B_list.Items.Add(item);
-                }
-                
-            }
+           
 
         }
 
